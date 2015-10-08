@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        int count = 0;
         btn = (Button)findViewById(R.id.btn_next);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction()
 //                            .replace(R.id.container, list[count])
                             .add(R.id.container, list[count])   //레이아웃이 겹침
-                            .addToBackStack(count++ + "")
+                            .addToBackStack(count + "")
                             .commit();
                 }else{
                     getSupportFragmentManager().popBackStack("0", FragmentManager.POP_BACK_STACK_INCLUSIVE); // number 0까지만 빼
